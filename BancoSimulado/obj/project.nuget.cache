@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "IV1EHHXv1ps=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LINKA YUJRA\\Desktop\\PRUEBA_BNB\\BancoSimulado\\BancoSimulado.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LINKA YUJRA\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.1\\microsoft.aspnetcore.openapi.10.0.1.nupkg.sha512",
+    "C:\\Users\\LINKA YUJRA\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
