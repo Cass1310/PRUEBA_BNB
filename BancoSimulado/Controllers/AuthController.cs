@@ -42,11 +42,11 @@ namespace BancoSimulado.Controllers
             {
                 Token = token,
                 RefreshToken = refreshToken,
-                ExpiresInSeconds = 90
+                ExpiresInSeconds = 150
             };
 
             // Guardar token y expiración
-            TokenStore.Tokens[token] = DateTime.UtcNow.AddSeconds(90);
+            TokenStore.Tokens[token] = DateTime.UtcNow.AddSeconds(150);
 
             // Relacionar refresh con token
             TokenStore.RefreshTokens[refreshToken] = token;
@@ -66,7 +66,7 @@ namespace BancoSimulado.Controllers
 
             // Crear nuevo token
             var newToken = Guid.NewGuid().ToString();
-            TokenStore.Tokens[newToken] = DateTime.UtcNow.AddSeconds(90);
+            TokenStore.Tokens[newToken] = DateTime.UtcNow.AddSeconds(150);
 
             // Actualizar relación
             TokenStore.RefreshTokens[request.RefreshToken] = newToken;
@@ -74,7 +74,7 @@ namespace BancoSimulado.Controllers
             return Ok(new
             {
                 token = newToken,
-                expiresInSeconds = 90
+                expiresInSeconds = 150
             });
         }
 

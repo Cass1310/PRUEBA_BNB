@@ -6,5 +6,6 @@ namespace BancoSimulado.Data
     {
         public static List<Cliente> Clientes = new();
         public static List<Cuenta> Cuentas = new();
+        public static List<Movimiento> Movimientos = new();
     }
 }

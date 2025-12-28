@@ -44,5 +44,17 @@ namespace BancoSimulado.Controllers
             cuenta.BloqueadaRetiro = true;
             return Ok("Cuenta bloqueada contra retiro");
         }
+
+        [HttpGet("{id}/movimientos")]
+        public IActionResult Movimientos(int id)
+        {
+            var movimientos = BancoData.Movimientos
+                .Where(m => m.CuentaId == id)
+                .OrderByDescending(m => m.Fecha)
+                .ToList();
+
+            return Ok(movimientos);
+        }
+
     }
 }
