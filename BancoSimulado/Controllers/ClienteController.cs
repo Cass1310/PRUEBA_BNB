@@ -31,5 +31,20 @@ namespace BancoSimulado.Controllers
                 cuenta
             });
         }
+        [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<Cliente>), 200)]
+        public ActionResult<IEnumerable<Cliente>> ObtenerClientes()
+        {
+            var clientesConCuenta = BancoData.Clientes.Select(c =>
+            {
+                var cuenta = BancoData.Cuentas.FirstOrDefault(ac => ac.ClienteId == c.Id);
+                return new
+                {
+                    Cliente = c,
+                    Cuenta = cuenta
+                };
+            }).ToList();
+            return Ok(clientesConCuenta);
+        }
     }
 }
